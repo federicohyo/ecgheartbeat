@@ -42,7 +42,32 @@ class levelcrossing:
                            'reconstruction': []}    # from up/dn spikes
         self.n_data = 0;
         self.n_label = 0;
-    
+   
+    def read_amplifier_dat_file(self, filepath, startf=0, endf=500, do_plot = True):
+        """
+        This function reads the data from a .dat file created by Intan 
+        software and returns as a numpy array.
+
+        Inputs:
+            filepath: The path to the .dat file to be read.
+
+        Outputs:
+            amplifier_file: numpy array containing the data from the .dat file (in uV)
+        """
+
+        with open(filepath, 'rb') as fid:
+            raw_array = np.fromfile(fid, np.int16)
+        amplifier_file = raw_array * 0.195 #converting from int16 to microvolts
+        datt = np.zeros([len(amplifier_file[startf:endf]),2]);	
+        datt[:,1] = amplifier_file[startf:endf]
+        datt[:,0] = np.linspace(0,len(amplifier_file[startf:endf]),len(amplifier_file[startf:endf]))
+        self.recordings['data'].append(datt)
+        self.recordings['id'].append(1)
+
+        self.n_data += 1;
+
+        return amplifier_file
+ 
     def load_data(self, data_folder = 'data/', do_plot = False, partial_load = False):
         '''
             Load all data from data_folder
