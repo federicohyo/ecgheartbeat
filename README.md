@@ -27,7 +27,7 @@ adding recording id: 202 <br/>
 <br/>
 after processing all the files in the data folder, it will produce an output image.
 <br/>
-![alt text](https://raw.githubusercontent.com/federicohyo/ecgheartbeat/master/figures/ecg_spikes.png "ECG to SPIKES")
+<img src="https://raw.githubusercontent.com/federicohyo/ecgheartbeat/master/figures/ecg_spikes.png", width=800>
 <br/>
 This figure shows the ecg 1d signal converted into spikes and then reconstructed from the spike activity.
 Spike activity is obtained from a 2 channel delta modulator. UP and DN channels spikes are shown in the subplot at the bottom.
