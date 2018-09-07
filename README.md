@@ -29,5 +29,5 @@ after processing all the files in the data folder, it will produce an output ima
 <br/>
 <img src="https://raw.githubusercontent.com/federicohyo/ecgheartbeat/master/figures/ecg_spikes.png", width=800>
 <br/>
-This figure shows the ecg 1d signal converted into spikes and then reconstructed from the spike activity.
-Spike activity is obtained from a 2 channel delta modulator. UP and DN channels spikes are shown in the subplot at the bottom.
+This figure shows a sample of ECG signal converted into a temporal spikes train (2 channels). It also shows the reconstruction from the spike activity.
+Spike activity is obtained from a 2 channel delta modulator. Spikes from the UP and DN channels are shown in the subplot at the bottom.
